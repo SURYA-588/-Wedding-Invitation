@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaviyarasu & Idhu Shri - Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffffff 0%, #a5f7bc 100%);
+            color: #2f4f3f;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .couple-names {
+            font-size: 3em;
+            color: #2f855a;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #6b8f73;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .btn-primary {
+            background: #2f855a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #276749;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(47, 133, 90, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #2f855a;
+            color: #2f855a;
+        }
+
+        .btn-secondary:hover {
+            background: #2f855a;
+            color: white;
+        }
+
+        .btn-live {
+            background: rgb(140, 233, 182);
+            border: 2px solid #2f855a;
+            color: #2f855a;
+            animation: pulse 2s infinite;
+        }
+
+        /* Live schedule / countdown */
+        .live-schedule {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #6b8f73;
+            font-family: 'Georgia', serif;
+        }
+
+        .live-start {
+            color: #2f855a;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            min-width: 54px;
+            text-align: center;
+        }
+
+        .countdown-item .num {
+            font-size: 1.1em;
+            color: #2f4f3f;
+            font-weight: 600;
+        }
+
+        .countdown-item .label {
+            font-size: 0.7em;
+            color: #6b8f73;
+            margin-top: 2px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(47, 133, 90, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(47, 133, 90, 0); }
+        }
+
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: #2f855a;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #2f855a;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .venue-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            fill: #2f855a;
+        }
+
+        .venue-name {
+            font-size: 2em;
+            color: #2f4f3f;
+            margin-bottom: 20px;
+        }
+
+        .venue-address {
+            font-size: 1.1em;
+            color: #6b8f73;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .quote-text {
+            font-size: 1.8em;
+            color: #2f855a;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .invitation-text {
+            font-size: 1.1em;
+            color: #2f4f3f;
+            line-height: 1.8;
+        }
+
+        .family-title {
+            font-size: 1.8em;
+            color: #2f855a;
+            margin-bottom: 20px;
+        }
+
+        .family-name {
+            font-size: 1.5em;
+            color: #2f4f3f;
+            margin-bottom: 10px;
+        }
+
+        .family-relation {
+            font-size: 1em;
+            color: #6b8f73;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn {
+            padding: 12px 30px;
+            margin: 8px;
+            border-radius: 50px;
+            border: 2px solid #2f855a;
+            background: rgba(255, 255, 255, 0.5);
+            color: #2f4f3f;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            font-size: 15px;
+            width: calc(100% - 16px);
+            max-width: 350px;
+        }
+
+        .contact-btn:hover {
+            background: #2f855a;
+            color: white;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border: 2px solid #e5d5d0;
+            border-radius: 50px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: border-color 0.3s;
+            font-family: 'Georgia', serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2f855a;
+        }
+
+        textarea.form-input {
+            border-radius: 20px;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .copyright {
+            background: #67bb91;
+            color: white;
+            padding: 30px 20px 100px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .copyright-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #225f40;
+        }
+
+        .copyright a {
+            color: #18633d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 0;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #6b8f73;
+            font-size: 11px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 10px;
+            min-width: 60px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #2f855a;
+            background: rgba(47, 133, 90, 0.1);
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* theme-toggle removed */
+
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.2em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+            /* Responsive invite image */
+            .invite-image {
+                width: 100% !important;
+                max-width: 420px;
+                height: auto !important;
+            }
+                .invite-card {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            /* Center invitation image on larger screens as well */
+            .invite-card {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .invite-image {
+                display: block;
+                margin: 0 auto;
+                width: 320px;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#home" class="nav-item active">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="#venue" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Venue</span>
+        </a>
+        <a href="#invitation" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>Invite</span>
+        </a>
+        <a href="#family" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+            <span>Family</span>
+        </a>
+        <a href="#wishes" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+            </svg>
+            <span>Wishes</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="hero-section">
+         <div class="couple-names">Wedding Invitation</div>
+        <div class="couple-names">Kaviyarasu & Idhu Shri</div>
+        <div class="tagline">Together Forever, Starting Today</div>
+        <div>
+            <a href="kaviyarasu - indhu sri.pdf" id="download-attached"  class="btn btn-secondary" download="Kaviyarasu_Idhu_Invitation.pdf">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v6h6V9h3.67L12 2z"/>
+                </svg>
+                Download Invitation
+            </a>
+
+            <div style="font-size:0.9em; color:#6b8f73; margin-top:8px;">
+                
+            </div>
+            <a href="#venue" class="btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Location
+            </a>
+        </div>
+        <br>
+        <a href="#live" class="btn btn-live">
+            <span class="live-indicator"></span>
+            Watch Live Ceremony
+        </a>
+        <div class="live-schedule" id="live-schedule">
+            <div class="live-start">Live starts on: 26 Nov 2025, 6:00 PM IST</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><div class="num" id="cd-days">--</div><div class="label">Days</div></div>
+                <div class="countdown-item"><div class="num" id="cd-hours">--</div><div class="label">Hours</div></div>
+                <div class="countdown-item"><div class="num" id="cd-mins">--</div><div class="label">Mins</div></div>
+                <div class="countdown-item"><div class="num" id="cd-secs">--</div><div class="label">Secs</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Venue Section -->
+        <div id="venue" class="section">
+            <div class="section-title">Wedding Venue</div>
+            <div class="card">
+                <svg class="venue-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <div class="venue-name"> KTLOA Thirumana Mahal</div>
+                <div class="venue-address">
+                    2397+FHJ,Manmangalam <br>
+                    Karur, Tamil Nadu 639006
+                </div>
+                <a href="https://www.google.com/maps/dir//2397%2BFHJ,+Karur,+Tamil+Nadu+639006/@11.0187135,77.9814877,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3baa2dde0f070f79:0xfb0ee45ed9772fc6!2m2!1d78.0638896!2d11.0187246?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Get Directions
+                </a>
+            </div>
+        </div>
+        
+        <!-- Events Schedule Section -->
+        <div id="events" class="section">
+            <div class="section-title">Events Schedule</div>
+            <div style="display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card schedule-card">
+                    <div style="font-size:1.6em; color:#2f855a; margin-bottom:18px;">Elunthigal Seer & Innai Seer - எழுந்திகள் சீர் & இண்ணை சீர்</div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg><div>Nov 26, 2025</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><div>06:15 AM - 11:00 AM</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; color:#6b8f73;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div>KTLOA Thirumana Mahal</div></div>
+                </div>
+
+                <div class="card schedule-card">
+                    <div style="font-size:1.6em; color:#2f855a; margin-bottom:18px;">Naal Virunthu - நாள் விருந்து</div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg><div>Nov 26, 2025</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><div>11:00 AM - 11:45 AM</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; color:#6b8f73;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div>KTLOA Thirumana Mahal</div></div>
+                </div>
+
+                <div class="card schedule-card">
+                    <div style="font-size:1.6em; color:#2f855a; margin-bottom:18px;">Reception - வரவேற்பு விழா</div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg><div>Nov 26, 2025</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><div>06:00 PM - 09:00 PM</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; color:#6b8f73;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div>KTLOA Thirumana Mahal</div></div>
+                </div>
+
+                <div class="card schedule-card">
+                    <div style="font-size:1.6em; color:#2f855a; margin-bottom:18px;">Wedding Ceremony - திருமண விழா</div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg><div>Nov 27, 2025</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><div>05:00 AM - 06:00 AM</div></div>
+                    <div style="display:flex; align-items:center; gap:12px; color:#6b8f73;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2f855a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div>KTLOA Thirumana Mahal</div></div>
+                </div>
+            </div>
+        </div>
+        <div id="invitation" class="section">
+            <div class="card">
+                <div class="invite-card" style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+                    <img src="Kavi indhu.png" alt="Invitation" class="invite-image" style="width:320px; height:auto; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.12);"/>
+                    <div style="flex:1; min-width:220px;">
+                        <div class="quote-text">"Two souls with but a single thought, two hearts that beat as one."</div>
+                        <div class="invitation-text" style="margin-top:12px;">
+                            We joyfully invite you to celebrate our wedding ceremony as we begin our journey of love and togetherness. Your presence will make our day more special and memorable.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family Section -->
+        <div id="family" class="section">
+            <div class="card">
+                <div class="family-title">Groom's Family</div>
+                <div class="family-name">Mr. & Mrs. Palanisamy</div>
+                <div class="family-relation">Parents of the Groom</div>
+                <a href="tel:+919876543210" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    Call: +91 99655 53007
+                </a>
+                <a href="https://wa.me/919965553007" target="_blank" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+                <!-- Location button for Bride's Family -->
+                <a href="https://www.google.com/maps/dir//11.010818,78.132781/@11.010818,78.1302061,17z?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Location
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="family-title">Bride's Family</div>
+                <div class="family-name">Mr. & Mrs. Sivakumar</div>
+                <div class="family-relation">Parents of the Bride</div>
+                <a href="tel:+919876543211" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    Call: +91 98430 61446
+                </a>
+                <a href="https://wa.me/919843061446" target="_blank" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+                <!-- Location button for Groom's Family -->
+                <a href="https://www.google.com/maps/dir//10.9598151,78.0547156/@10.9598966,78.0135156,13z/data=!4m4!4m3!1m0!1m1!4e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Location
+                </a>
+            </div>
+        </div>
+
+        <!-- Wishes Section -->
+        <div id="wishes" class="section">
+            <div class="section-title">Send Your Wishes</div>
+            <!-- Formspree form -->
+            <form class="card" action="https://formspree.io/f/xzzjnpzp" method="POST">
+                <label style="display:block; margin-bottom:8px;">
+                    <left>Your name:</left>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                </label>
+                <label style="display:block; margin-bottom:8px;">
+                    <left>Your email:</left>
+                    <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                </label>
+                <label style="display:block; margin-bottom:8px;">
+                    <left>Your message:</left>
+                    <textarea name="message" class="form-input" placeholder="Your wishes and blessings..." required></textarea>
+                </label>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                    Send Wishes
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <footer class="copyright">
+        <div class="copyright-title">© 2025 Eventra - Moments Made Perfect</div>
+        <p>For website enquiries: Contact Surya </p>
+        <p><a href="tel:+917708794789">7708794789</a></p>
+    </footer>
+
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'venue', 'invitation', 'family', 'wishes'];
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = 'home';
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = sectionId;
+                    }
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+        // Countdown to 26 Nov 2025 18:00 IST (UTC+5:30)
+        (function() {
+            // Create a Date in UTC corresponding to 2025-11-26 18:00 IST
+            // IST is UTC+5:30, so subtract 5.5 hours to get UTC time
+            const targetLocal = {
+                year: 2025,
+                month: 11, // November
+                day: 26,
+                hour: 18,
+                minute: 0,
+            };
+
+            // Build a Date object for the target in UTC
+            function makeUtcFromIst(y, m, d, hh, mm) {
+                // m is 1-based month
+                // Create a Date in UTC by using Date.UTC for UTC time of (y,m-1,d,hh-mmOffset,...)
+                // IST is +5:30, so UTC = IST - 5:30
+                const istOffsetMinutes = 5 * 60 + 30;
+                const utc = new Date(Date.UTC(y, m - 1, d, hh, mm));
+                // Subtract offset to convert IST->UTC
+                const utcMillis = utc.getTime() - istOffsetMinutes * 60 * 1000;
+                return new Date(utcMillis);
+            }
+
+            const targetDate = makeUtcFromIst(targetLocal.year, targetLocal.month, targetLocal.day, targetLocal.hour, targetLocal.minute);
+
+            const $days = document.getElementById('cd-days');
+            const $hours = document.getElementById('cd-hours');
+            const $mins = document.getElementById('cd-mins');
+            const $secs = document.getElementById('cd-secs');
+            const $liveStart = document.querySelector('.live-start');
+
+            function updateCountdown() {
+                const now = new Date();
+                let diff = targetDate.getTime() - now.getTime();
+                if (diff <= 0) {
+                    // Live now
+                    $days.textContent = '00';
+                    $hours.textContent = '00';
+                    $mins.textContent = '00';
+                    $secs.textContent = '00';
+                    $liveStart.textContent = 'Live now';
+                    // Optionally, you could swap the Watch Live button to open an embed now.
+                    clearInterval(timer);
+                    return;
+                }
+                const sec = Math.floor(diff / 1000);
+                const days = Math.floor(sec / (3600 * 24));
+                const hours = Math.floor((sec % (3600 * 24)) / 3600);
+                const mins = Math.floor((sec % 3600) / 60);
+                const secs = sec % 60;
+
+                $days.textContent = String(days).padStart(2, '0');
+                $hours.textContent = String(hours).padStart(2, '0');
+                $mins.textContent = String(mins).padStart(2, '0');
+                $secs.textContent = String(secs).padStart(2, '0');
+            }
+
+            updateCountdown();
+            const timer = setInterval(updateCountdown, 1000);
+        })();
+    </script>
+    <script>
+        // Try to download an attached PDF reliably.
+        // Strategy:
+        // 1) Try a hosted copy at /assets/invitation.pdf
+        // 2) If that fails, try the relative local file 'indhu sri.pdf'
+        // 3) If that fails, fall back to generating a PDF from the page (downloadInvitation)
+        async function downloadAttachedPDF(event) {
+            event.preventDefault();
+
+            // Helper to programmatically download a blob
+            function downloadBlob(blob, filename) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 5000);
+            }
+
+            // 1) Try hosted path
+            const hostedPath = 'assets/invitation.pdf';
+            try {
+                const res = await fetch(hostedPath, { method: 'HEAD' });
+                if (res && res.ok) {
+                    // Download via GET to stream the file
+                    const getRes = await fetch(hostedPath);
+                    if (getRes.ok) {
+                        const blob = await getRes.blob();
+                        downloadBlob(blob, 'Kaviyarasu_Idhu_Invitation.pdf');
+                        return;
+                    }
+                }
+            } catch (e) {
+                // ignore and try next fallback
+                console.info('Hosted invitation not available:', e);
+            }
+
+            // 2) Try relative local file (this works when the file exists next to index.html and served by the web server)
+            const localRelative = 'indhu sri.pdf';
+            try {
+                const r = await fetch(localRelative, { method: 'GET' });
+                if (r && r.ok) {
+                    const blob = await r.blob();
+                    downloadBlob(blob, 'kaviyarasu-indhu-sri.pdf');
+                    return;
+                }
+            } catch (e) {
+                console.info('Relative local PDF fetch failed (may be blocked by browser/file://):', e);
+            }
+
+            // 3) Fallback: generate a PDF using the existing generator
+            if (typeof downloadInvitation === 'function') {
+                try {
+                    await downloadInvitation(new Event('click'));
+                    return;
+                } catch (e) {
+                    console.error('Fallback PDF generation failed', e);
+                }
+            }
+
+            alert('Could not download the attached PDF. Please place the invitation PDF at "assets/invitation.pdf" in the project, or open this page via a web server so local files can be fetched.');
+        }
+    </script>
+    <!-- jsPDF from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        async function downloadInvitation(event) {
+            event.preventDefault();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+
+            const margin = 40;
+            const pdfWidth = doc.internal.pageSize.getWidth();
+
+            const bodyText = 'We joyfully invite you to celebrate our wedding ceremony as we begin our journey of love and togetherness. Your presence will make our day more special and memorable.';
+
+            // Helper to create PNG data URL from an image element or ImageBitmap
+            async function imageToDataUrlFromElement(imgEl) {
+                if (!imgEl) return null;
+                // wait until loaded
+                if (!imgEl.complete) {
+                    await new Promise((res, rej) => { imgEl.onload = res; imgEl.onerror = rej; });
+                }
+                if (!imgEl.naturalWidth) return null;
+                const canvas = document.createElement('canvas');
+                const maxWidth = 500;
+                const scale = Math.min(1, maxWidth / imgEl.naturalWidth);
+                canvas.width = imgEl.naturalWidth * scale;
+                canvas.height = imgEl.naturalHeight * scale;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(imgEl, 0, 0, canvas.width, canvas.height);
+                return canvas.toDataURL('image/png');
+            }
+
+            try {
+                // First try using on-page image element (more reliable for local file serving)
+                const imgEl = document.querySelector('.invite-image');
+                let dataUrl = null;
+
+                try {
+                    dataUrl = await imageToDataUrlFromElement(imgEl);
+                } catch (e) {
+                    console.warn('drawImage from element failed', e);
+                    dataUrl = null;
+                }
+
+                // If not available, fallback to fetching the image and converting
+                if (!dataUrl) {
+                    const imgUrl = 'images/invite.svg';
+                    const res = await fetch(imgUrl);
+                    if (!res.ok) throw new Error('Image fetch failed: ' + res.status);
+                    const blob = await res.blob();
+                    if ('createImageBitmap' in window) {
+                        const bitmap = await createImageBitmap(blob);
+                        const canvas = document.createElement('canvas');
+                        const maxWidth = 500;
+                        const scale = Math.min(1, maxWidth / bitmap.width);
+                        canvas.width = bitmap.width * scale;
+                        canvas.height = bitmap.height * scale;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+                        dataUrl = canvas.toDataURL('image/png');
+                    } else {
+                        // Fallback for older browsers: use FileReader to dataURL
+                        dataUrl = await new Promise((resolve, reject) => {
+                            const fr = new FileReader();
+                            fr.onload = () => resolve(fr.result);
+                            fr.onerror = reject;
+                            fr.readAsDataURL(blob);
+                        });
+                    }
+                }
+
+                if (dataUrl) {
+                    const imgProps = doc.getImageProperties(dataUrl);
+                    const imgPdfWidth = Math.min(pdfWidth - margin * 2, imgProps.width);
+                    const imgPdfHeight = (imgProps.height * imgPdfWidth) / imgProps.width;
+                    doc.addImage(dataUrl, 'PNG', (pdfWidth - imgPdfWidth) / 2, margin, imgPdfWidth, imgPdfHeight);
+
+                    // Add title and body
+                    doc.setFontSize(18);
+                    doc.setTextColor('#2f855a');
+                    const title = 'Kaviyarasu & Idhu Shri - Wedding Invitation';
+                    doc.text(title, pdfWidth / 2, margin + imgPdfHeight + 40, { align: 'center' });
+
+                    doc.setFontSize(12);
+                    doc.setTextColor('#2f4f3f');
+                    const split = doc.splitTextToSize(bodyText, pdfWidth - margin * 2);
+                    doc.text(split, margin, margin + imgPdfHeight + 80);
+
+                    doc.save('Kaviyarasu_Idhu_Invitation.pdf');
+                    return;
+                }
+            } catch (err) {
+                console.error('Image to PDF failed, falling back to text-only PDF', err);
+            }
+
+            // Fallback: text-only PDF
+            const doc2 = new jsPDF({ unit: 'pt', format: 'a4' });
+            doc2.setFontSize(18);
+            doc2.setTextColor('#2f855a');
+            doc2.text('Kaviyarasu & Idhu Shri - Wedding Invitation', doc2.internal.pageSize.getWidth() / 2, 80, { align: 'center' });
+            doc2.setFontSize(12);
+            doc2.setTextColor('#2f4f3f');
+            const split2 = doc2.splitTextToSize(bodyText, doc2.internal.pageSize.getWidth() - 80);
+            doc2.text(split2, 40, 120);
+            doc2.save('Kaviyarasu_Idhu_Invitation.pdf');
+        }
+    </script>
+</body>
+</html>
